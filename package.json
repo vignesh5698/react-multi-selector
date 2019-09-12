@@ -1,7 +1,6 @@
 {
-  "name": "react-multi-select-dropdown",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-multi-selector",
+  "version": "1.0.0",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -27,5 +26,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vignesh5698/react-multi-selector.git"
+  },
+  "keywords": [
+    "react-multi-select",
+    "multi-select",
+    "react",
+    "multi-select"
+  ],
+  "author": "Vignesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vignesh5698/react-multi-selector/issues"
+  },
+  "homepage": "https://github.com/vignesh5698/react-multi-selector#readme"
 }
