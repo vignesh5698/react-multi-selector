@@ -107,10 +107,54 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #0c8f29;
   border-radius: 27px;
   left: 4px;
   top: 3px;
+}
+
+
+.selected-background-green {
+  background-color: #8cd49c;
+}
+
+.selected-background-blue {
+  background-color: #7cbce4;
+}
+
+.selected-background-red {
+  background-color: #eb8181;
+}
+
+.selected-background-default {
+  background-color: #dbd9d9;
+}
+
+.circle_background_red {
+  background-color: #ce0000;
+}
+
+.circle_background_green {
+  background-color: #0a6407;
+}
+
+.circle_background_blue {
+  background-color: #090764;
+}
+
+.circle_background_default {
+  background-color: #000000;
+}
+
+.content_green:hover {
+  background-color: #8cd49c
+}
+
+.content_blue:hover {
+  background-color: #7cbce4
+}
+
+.content_red:hover {
+  background-color: #eb8181
 }
 
 .selected_checkmark_stem {
@@ -130,9 +174,7 @@
   top: 2px;
   background-color: #282c34;
 }
-.content:hover {
-  background-color: #0c8f29
-}
+
 .selected_checkmark_kick {
   position: absolute;
   width: 9px;

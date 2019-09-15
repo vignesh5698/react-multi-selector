@@ -7,7 +7,9 @@ class MultiSelect extends Component {
       options: this.props.options,
       selected: this.props.selected,
       shouldViewMultiSelectContent: false,
-      isContentSelected: false
+      isContentSelected: false,
+      val: ['val1','val2','val3','val4','val5'],
+      selectedBackgroundColor: this.props.selectedBackgroundColor || 'default'
     }
   }
 
@@ -32,11 +34,11 @@ class MultiSelect extends Component {
   }
 
   renderIcon = (value) => {
-    const { selected } = this.state;
+    const { selected, selectedBackgroundColor } = this.state;
     let isContentSelected = selected.includes(value);
     let circle, checkmark_kick, checkmark_stem;
     if(isContentSelected) {
-      circle = `checkmark_circle`;
+      circle = `checkmark_circle circle_background_${selectedBackgroundColor}`;
       checkmark_stem = `selected_checkmark_stem`;
       checkmark_kick = `selected_checkmark_kick`;
     }else {
@@ -52,32 +54,22 @@ class MultiSelect extends Component {
       </span>
     )
   }
-  
+
   renderMultiSelectContent = () => {
-    const { shouldViewMultiSelectContent } = this.state;
-    let display = "dropdown-content "+ (shouldViewMultiSelectContent ? 'show' : 'hide')+" content"
+    const { shouldViewMultiSelectContent, val, selected, selectedBackgroundColor } = this.state;
+    let display = "dropdown-content "+ (shouldViewMultiSelectContent ? 'show ' : 'hide')+` content_${selectedBackgroundColor}` 
     return(
       <div>
-        <div className={display} onClick={this.onSelectOption} key={1} data-value={'value1'}>
-          {this.renderIcon('value1')}
-          {/* value1 */}
-        </div>
-        <div className={display} onClick={this.onSelectOption} key={2} data-value={'value2'}>
-        {this.renderIcon('value2')}
-          {/* value2 */}
-        </div>
-        <div className={display} onClick={this.onSelectOption} key={3} data-value={'value3'}>
-        {this.renderIcon('value3')}
-          {/* value3 */}
-        </div>
-        <div className={display} onClick={this.onSelectOption} key={4} data-value={'value4'}>
-        {this.renderIcon('value4')}
-          value4
-        </div>
-        <div className={display} onClick={this.onSelectOption} key={5} data-value={'value5'}>
-        {this.renderIcon('value5')}
-          value5
-        </div>
+        {val.map((v) => {
+          let isContentSelected = selected.includes(v);
+          let bg = isContentSelected ? ` selected-background-${selectedBackgroundColor}` : ``;
+            return(
+              <div className={display+bg} onClick={this.onSelectOption} key={v} data-value={v}>
+                {this.renderIcon(v)}
+                {v}
+              </div>
+            )
+        })}
       </div>
     )
   }
