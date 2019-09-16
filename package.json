@@ -1,6 +1,6 @@
 {
   "name": "react-multi-selector",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -30,8 +30,13 @@
     ]
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "multiSelect.js",
-  "devDependencies": {},
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vignesh5698/react-multi-selector.git"
@@ -47,5 +52,10 @@
   "bugs": {
     "url": "https://github.com/vignesh5698/react-multi-selector/issues"
   },
-  "homepage": "https://github.com/vignesh5698/react-multi-selector#readme"
+  "homepage": "https://github.com/vignesh5698/react-multi-selector#readme",
+  "babel": {
+    "plugins": [
+      ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ]
+  }
 }

@@ -1,28 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes fade-in {
   from { 
     opacity: 0; 
@@ -55,6 +30,43 @@
   padding-left: 1%;
 }
 
+
+.close-stem {
+  position: absolute;
+  width: 3px;
+  height: 22px;
+  left: 6px;
+  top: 18px;
+  background-color: #282c34;
+}
+
+.close-kick {
+  position: absolute;
+  width: 22px;
+  height: 3px;
+  left: 7px;
+  top: 18px;
+  background-color: #282c34;
+}
+
+.open-kick {
+  position: absolute;
+  width: 22px;
+  height: 3px;
+  left: -3px;
+  top: 28px;
+  background-color: #282c34;
+}
+
+.open-stem {
+  position: absolute;
+  width: 3px;
+  height: 22px;
+  left: 17px;
+  top: 7px;
+  background-color: #282c34;
+}
+
 .dropdown-button :hover {
   background-color: #dbd9d9;
   cursor: pointer;
@@ -81,13 +93,17 @@
 }
 
 .hide {
+  animation: fade-out 500ms;
   display: none;
 }
 
 .dropdown-icon {
+  width: 30px;
+  height: 24px;
+  transform: rotate(45deg);
   float: right;
   margin-right: 2%;
-  margin-top: 0.4%;
+  margin-top: -0.6%;
 }
 
 .dropdown-content-icon {
