@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 class MultiSelect extends Component {
   constructor(props) {
     super(props);
+
     this.state = { 
       options: [],
       selected: [],
       shouldViewMultiSelectContent: false,
       isContentSelected: false,
-      selectedBackgroundColor: this.props.selectedBackgroundColor || 'default',
-      dropdownButtonTitle: this.props.dropdownButtonTitle || 'Select from the list',
+      selectedBackgroundColor: this.props.selectedBackgroundColor,
+      dropdownButtonTitle: this.props.dropdownButtonTitle,
       selectAll: false
     }
   }
@@ -44,6 +45,7 @@ class MultiSelect extends Component {
     const { selectedBackgroundColor } = this.state;
     const availableColors = ['red', 'green', 'blue'];
     let isSelectedColorAvailable = availableColors.includes(selectedBackgroundColor);
+
     return isSelectedColorAvailable ? selectedBackgroundColor : 'default';
   }
 
@@ -131,14 +133,24 @@ class MultiSelect extends Component {
     )
   }
 
+  renderDropdownTitle = () => {
+    const { selected }  = this.state;
+    const dropdownButtonTitle = ( selected === []) || this.state.dropdownButtonTitle 
+    console.log(dropdownButtonTitle)
+    return dropdownButtonTitle;
+  }
+
   renderMultiSelect = () => {
-    const dropdownButtonTitle = this.state.dropdownButtonTitle;
+    const { selected }  = this.state;
+    const dropdownButtonTitle = ['val1','val2']
+    // this.state.dropdownButtonTitle
     return(
       <div>
         <div className="dropdown-button">       
           <div className="dropdown" type="button" onClick={this.onViewMultiSelectContent}>
           {this.renderDropdownIcon()} 
-          {dropdownButtonTitle}
+          {dropdownButtonTitle.map((i) => i+' ')}
+          {/* {this.renderDropdownTitle()} */}
           </div>
           {this.renderMultiSelectContent()}
         </div>
@@ -154,5 +166,10 @@ class MultiSelect extends Component {
     );
   }
 }
+
+MultiSelect.defaultProps = {
+  selectedBackgroundColor: 'default',
+  dropdownButtonTitle: 'Select from the list'
+};
  
 export default MultiSelect;

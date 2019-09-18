@@ -30,7 +30,7 @@ class Home extends Component {
           options={options}
           selected={selected}
           onSelectedChange={this.onSelectedChange}
-          selectedBackgroundColor='blue'
+          selectedBackgroundColor='green'
         />
       </div>
     );
